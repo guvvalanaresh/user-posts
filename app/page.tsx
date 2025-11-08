@@ -1,38 +1,33 @@
 import prisma from "@/lib/prisma";
+import Link from "next/link";
 
 export default async function Home() {
   const users = await prisma.user.findMany({
     include: {
-      posts: true, // ✅ fetch relevant posts
+      posts: true, // get posts count also
     },
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16">
-      <h1 className="text-4xl font-bold mb-8 font-sans text-[#333333]">
-        Superblog
-      </h1>
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold mb-8">Superblog</h1>
 
-      <ul className="list-none font-sans border border-amber-500 p-5 space-y-4 flex gap-5">
+      <div className="space-y-4 w-[400px]">
         {users.map((user) => (
-          <li key={user.id} className="border border-blue-500 p-3">
-            <p className="text-lg font-semibold text-center">{user.name}</p>
-
-            {/* ✅ Show user's posts */}
-            {user.posts.length === 0 ? (
-              <p className="text-sm text-gray-500">No posts yet</p>
-            ) : (
-              <ul className="mt-2 space-y-1">
-                {user.posts.map((post) => (
-                  <li key={post.id} className="text-gray-700">
-                    👉 {post.title}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+          <Link
+            key={user.id}
+            href={`/user/${user.id}`}
+            className="block p-4 rounded-lg bg-white shadow border hover:bg-gray-100 transition"
+          >
+            <p className="text-lg font-semibold">
+              {user.name}{" "}
+              <span className="text-gray-600 text-sm">
+                ({user.posts.length} {user.posts.length === 1 ? "post" : "posts"})
+              </span>
+            </p>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
