@@ -60,3 +60,5 @@ export default function NewPost() {
     </div>
   );
 }
+
+// It is the page to create the new posts in the database

@@ -25,3 +25,5 @@ export default async function Posts() {
     </div>
   );
 }
+
+// It is the main page to see the user posts

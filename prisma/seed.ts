@@ -42,3 +42,5 @@ export async function main() {
 }
 
 main();
+
+// In this page we can use queries to post the data. It is like main page with queries for database to create any records.

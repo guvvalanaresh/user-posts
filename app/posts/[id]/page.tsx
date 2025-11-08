@@ -26,3 +26,5 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
     </div>
   );
 }
+
+// Here when a user can type the user particular path they can see their posts. It is done using the user id

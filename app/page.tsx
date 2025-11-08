@@ -17,3 +17,5 @@ export default async function Home() {
     </div>
   );
 }
+
+// Main home page where users can see the number of user are there
