@@ -10,3 +10,5 @@ const prisma = globalForPrisma.prisma || new PrismaClient().$extends(withAcceler
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
 
 export default prisma
+
+// This is main prismaClient from here we import prisma with this we can access the entire database like tables,.. everything.
