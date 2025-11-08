@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className="bg-black text-white p-4 flex justify-between items-center">
       <Link href="/" className="text-lg font-bold">
-        🚀 Mini Project Hub
+        🚀 User Post's
       </Link>
 
       <div className="flex gap-5">
