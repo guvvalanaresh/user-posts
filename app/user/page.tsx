@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
-export default async function Home() {
+export default async function User() {
   const users = await prisma.user.findMany({
     include: {
       posts: true, // get posts count also
@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-8">User Post's</h1>
+      <h1 className="text-4xl font-bold mb-8">User's</h1>
 
       <div className="w-[400px] flex gap-5">
         {users.map((user) => (

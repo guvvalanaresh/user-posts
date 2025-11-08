@@ -10,12 +10,21 @@ export default function Navbar() {
         🚀 Mini Project Hub
       </Link>
 
-      <Link
-        href="/posts/new"
-        className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition"
-      >
-        + Create Post
-      </Link>
+      <div className="flex gap-5">
+          <Link
+            href="/posts/new"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition"
+          >
+            + Create Post
+          </Link>
+
+          <Link
+            href="/user/new"
+            className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition"
+          >
+            + Create User
+          </Link>
+      </div>
     </nav>
   );
 }
